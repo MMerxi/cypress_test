@@ -23,6 +23,8 @@ describe('TEST de LOGIN', () => {
     //cy.get(':nth-child(21) > a').click() igual ya no es necesario
   //})
 
+  //EJERCICIO1
+
   it('A valid user can login', () =>{ 
     loginPage.fillUser("tomsmith")
     loginPage.fillPass("SuperSecretPassword!")
@@ -38,6 +40,7 @@ describe('TEST de LOGIN', () => {
     
   })
 
+  //EJERCICIO2
 
     it('A invalid password', () =>{  
       //cy.visit('https://the-internet.herokuapp.com/')
@@ -48,7 +51,20 @@ describe('TEST de LOGIN', () => {
       cy.get('#flash').contains("Your password is invalid!")
     
   })
+
+  //EJERCICIO3
+
+    it('A invalid user', () =>{  
+      //cy.visit('https://the-internet.herokuapp.com/')
+      //cy.get(':nth-child(21) > a').click()
+      cy.get('#username').type("Any")
+      cy.get('#password').type("SuperSecretoPassword!")
+      cy.get('.fa').click()
+      cy.get('#flash').contains("Your user is invalid!")
   
+  })
+  
+  //EJERCICIO4 (DISTINTAS FORMAS DE HACERSE)
   
     it('campos usuario y contraseña vacíos', () =>{  
       //cy.visit('https://the-internet.herokuapp.com/')
@@ -60,7 +76,7 @@ describe('TEST de LOGIN', () => {
 
   })
 
-    it('campos usuario y contraseña vacíos', () =>{  
+    it('usuario y contraseña vacíos', () =>{  
       //cy.visit('https://the-internet.herokuapp.com/')
       //cy.get(':nth-child(21) > a').click()
       cy.get('#username').clear()
