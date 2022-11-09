@@ -17,7 +17,7 @@ describe('TEST de LOGIN', () => {
   })
 
 
-  
+    
 
     //cy.visit('https://the-internet.herokuapp.com/') ya no es necesario
     //cy.get(':nth-child(21) > a').click() igual ya no es necesario

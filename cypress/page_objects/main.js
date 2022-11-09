@@ -8,4 +8,4 @@ export class MainPage {
         cy.get(':nth-child(21) > a').click()
     }
 
-}
+} 

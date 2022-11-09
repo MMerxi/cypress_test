@@ -14,7 +14,7 @@ describe('TEST de LOGIN', () => {
       cy.get('.fa').click()
       cy.get('#flash').contains("You logged into a secure area!")
     
-  })
+  }) 
 
 
     it('A invalid password', () =>{  
