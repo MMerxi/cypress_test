@@ -42,48 +42,69 @@ describe('TEST de LOGIN', () => {
 
   //EJERCICIO2
 
-    it('A invalid password', () =>{  
+    it('A invalid password', () =>{ 
+      loginPage.fillUser("tomsmith")
+      loginPage.fillPass("error!")
+      loginPage.clickButtonLogin()
+      loginPage.checkMessage("Your password is invalid!")
+  
+  })
+  
+  
+  
+  //it('A invalid password', () =>{  
       //cy.visit('https://the-internet.herokuapp.com/')
       //cy.get(':nth-child(21) > a').click()
-      cy.get('#username').type("tomsmith")
-      cy.get('#password').type("error!")
-      cy.get('.fa').click()
-      cy.get('#flash').contains("Your password is invalid!")
+      //cy.get('#username').type("tomsmith")
+      //cy.get('#password').type("error!")
+      //cy.get('.fa').click()
+      //cy.get('#flash').contains("Your password is invalid!")
     
-  })
+  
 
   //EJERCICIO3
 
-    it('A invalid user', () =>{  
+  it('A invalid user', () =>{ 
+    loginPage.fillUser("Any")
+    loginPage.fillPass("SuperSecretPassword!")
+    loginPage.clickButtonLogin()
+    loginPage.checkMessage("Your username is invalid!")  
+  
+  //it('A invalid user', () =>{  
       //cy.visit('https://the-internet.herokuapp.com/')
       //cy.get(':nth-child(21) > a').click()
-      cy.get('#username').type("Any")
-      cy.get('#password').type("SuperSecretoPassword!")
-      cy.get('.fa').click()
-      cy.get('#flash').contains("Your user is invalid!")
+      //cy.get('#username').type("Any")
+      //cy.get('#password').type("SuperSecretoPassword!")
+      //cy.get('.fa').click()
+      //cy.get('#flash').contains("Your user is invalid!")
   
   })
   
   //EJERCICIO4 (DISTINTAS FORMAS DE HACERSE)
   
-    it('campos usuario y contraseña vacíos', () =>{  
+    
+    it('A invalid user', () =>{ 
+      loginPage.usernameIsClear()
+      loginPage.passwordIsClear()
+      loginPage.clickButtonLogin()
+      loginPage.checkMessage("Your username is invalid!")
+  
+  //it('campos usuario y contraseña vacíos', () =>{  
       //cy.visit('https://the-internet.herokuapp.com/')
       //cy.get(':nth-child(21) > a').click()
-      cy.get('#username').should('have.value', '')
-      cy.get('#password').should('have.value', '')
-      cy.get('.fa').click()
-      cy.get('#flash').contains("Your username is invalid")
+      //cy.get('#username').should('have.value', '')
+      //cy.get('#password').should('have.value', '')
+      //cy.get('.fa').click()
+      //cy.get('#flash').contains("Your username is invalid")
 
   })
 
-    it('usuario y contraseña vacíos', () =>{  
+    //it('usuario y contraseña vacíos', () =>{  
       //cy.visit('https://the-internet.herokuapp.com/')
       //cy.get(':nth-child(21) > a').click()
-      cy.get('#username').clear()
-      cy.get('#password').clear()
-      cy.get('.fa').click()
-      cy.get('#flash').contains("Your username is invalid")
-  })
+      //cy.get('#username').clear()
+      //cy.get('#password').clear()
+      //cy.get('.fa').click()
+      //cy.get('#flash').contains("Your username is invalid")
 
 })
-
