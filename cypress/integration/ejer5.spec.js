@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-Describe('TEST de TABLAS' , () => {
+describe('TEST de TABLAS' , () => {
     beforeEach(() => {
         cy.visit("https://the-internet.herokuapp.com/")
         cy.get(':nth-child(39) > a').click()
@@ -8,7 +8,7 @@ Describe('TEST de TABLAS' , () => {
     })  
 
 //Damian
-    it.only('Shifting Content 5 elements', () =>{
+    it ('Shifting Content 5 elements', () =>{
     //cy.visit("https://the-internet.herokuapp.com/")
     //cy.get(':nth-child(39) > a').click()
     //cy.get('[href="/shifting_content/menu"]').click()
