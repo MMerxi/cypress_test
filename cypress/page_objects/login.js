@@ -13,4 +13,4 @@ export class LoginPage {
         cy.get(".fa").click()
     }
 
-}
+} 

@@ -3,3 +3,4 @@ export class UserpassVacios4Page {
         cy.get("#flash").contains (text)
     }
 } 
+ 

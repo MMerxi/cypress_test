@@ -9,23 +9,23 @@ describe('TEST de LOGIN', () => {
   const login2Page = new Login2Page()
   const main2Page = new Main2Page()
   const passwordError2Page = new PasswordError2Page()
-
+  
 
   beforeEach(() => {
     main2Page.navigate()
     main2Page.clickLoginOption()
+
   
   })
-})
+
 
 //EJERCICIO2
 
-it('A invalid password', () =>{  
-  //cy.visit('https://the-internet.herokuapp.com/')
-  //cy.get(':nth-child(21) > a').click()
-  cy.get('#username').type("tomsmith")
-  cy.get('#password').type("error!")
-  cy.get('.fa').click()
-  cy.get('#flash').contains("Your password is invalid!")
+it('A invalid password', () =>{ 
+  login2Page.fillUser("tomsmith")
+  login2Page.fillPass("error!")
+  login2Page.clickButtonLogin()
+  passwordError2Page.checkMessage("Your password is invalid!")
 
+})
 })

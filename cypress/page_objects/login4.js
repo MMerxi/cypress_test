@@ -1,11 +1,11 @@
 export class Login4Page {
 
-    fillUser(text) {
-        cy.get("#username").clear("")
+    usernameIsClear() {
+        cy.get("#username").clear()
     } 
 
-    fillPass(text) {
-        cy.get("#password").clear("")
+    passwordIsClear() {
+        cy.get("#password").clear()
     }
 
 
